@@ -291,19 +291,15 @@ parameter_types! {
 
 impl pallet_assets::Config for Runtime {
     type Event = Event;
-    type Balance = Balance;
+    type Balance = u128; // u64 no errors
     type AssetId = u32;
     type Currency = Balances;
     type ForceOrigin = EnsureRoot<AccountId>;
-    //type AssetDeposit = AssetDeposit;
     type AssetDeposit = ();
-    // type MetadataDepositBase = MetadataDepositBase;
-    // type MetadataDepositPerByte = MetadataDepositPerByte;
-    // type ApprovalDeposit = ApprovalDeposit;
     type MetadataDepositBase = ();
     type MetadataDepositPerByte = ();
     type ApprovalDeposit = ();
-    type StringLimit = StringLimit;
+    type StringLimit = ();
     type Freezer = ();
     type Extra = ();
     type WeightInfo = pallet_assets::weights::SubstrateWeight<Runtime>;
